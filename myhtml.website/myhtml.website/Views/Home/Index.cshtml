@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4 header-text">Welcome to my Music website</h1>
+    <p>Enjoy one of my favorite songs below:</p>
+</div>
+<div id="container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/60ItHLz5WEA">
+    </iframe>
+</div>
+<script>
+    //using the animation as changing the background color in every 2 seconds
+    const box = document.getElementById('container');
+    const colors = ['#FA6366', '#F09260', '#F07860', '#F060B9', '#F0AB60'];
+    function changeColors(index) {
+            if (index >= colors.length) {
+                index = 0;
+            }
+        box.style.backgroundColor = colors[index];
+         setTimeout(() => changeColors(index + 1), 2000);
+        }
+    changeColors(0);
+</script>;
